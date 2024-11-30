@@ -1,0 +1,78 @@
+# Update the HTML content with the provided sad image link for the "no" option
+sad_image_url = "https://i.pinimg.com/736x/57/da/d1/57dad1fab898d89f31cb8007c2d26d82.jpg"
+
+final_html_content = f"""
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kocham Cię</title>
+    <style>
+        body {{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec;
+        }}
+        h1 {{
+            font-size: 3rem;
+            color: #d81b60;
+        }}
+        button {{
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }}
+        .yes {{
+            background-color: #81c784;
+            color: white;
+        }}
+        .no {{
+            background-color: #e57373;
+            color: white;
+        }}
+        img, iframe {{
+            margin-top: 20px;
+            max-width: 80%;
+            height: auto;
+        }}
+    </style>
+</head>
+<body>
+    <h1>Kocham Cię, mój Maćku słodki! ❤️</h1>
+    <button class="yes" onclick="showYes()">Ja ciebie też, Haniu!</button>
+    <button class="no" onclick="showNo()">Ja ciebie nie 🔥</button>
+
+    <div id="result"></div>
+
+    <script>
+        function showYes() {{
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<img src="{happy_image_url}" alt="Szczęśliwe zdjęcie">';
+        }}
+
+        function showNo() {{
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<img src="{sad_image_url}" alt="Smutne zdjęcie">';
+        }}
+    </script>
+</body>
+</html>
+"""
+
+# Save the final HTML content to a file
+file_path_final = "/mnt/data/KochamCie_final.html"
+with open(file_path_final, "w", encoding="utf-8") as f:
+    f.write(final_html_content)
+
+file_path_final
+
